@@ -1,0 +1,50 @@
+package Package1;
+import org.openqa.selenium.By;
+
+public class SelTest1 {
+    public static void main (String[] args){
+        // Set the system property for Safari driver
+        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
+
+        // Initialize Safari driver
+        WebDriver driver = new SafariDriver();
+
+        // Maximize the window
+        driver.manage().window() maximize();
+
+        // Open the URL
+        driver.get("http://localhost:3000/new");
+
+        // Find username input field and send data
+        WebElement titleField = driver.findElement(By.name("title"));
+        titleField.sendKeys("my today's creation");
+
+        // Find password input field and send data
+        WebElement cuisineField = driver.findElement(By.name("cuisine")):
+        cuisineField.sendKeys("North Indian");
+
+        WebElement descriptionField = driver.findElement(By.name("description"));
+        descriptionField.sendKeys("pushing my limits");
+
+        WebElement stepsField = driver.findElement(By.name("steps") );
+        stepsField.sendKeys("simple easy quick");
+
+        WebElement ingredientsField = driver.findElement (By.name("ingredients"));
+        ingredientsField.sendKeys("curd milk salt");
+
+        WebElement instructionField = driver.findElement (By.name("instructions"));
+        instructionField.sendKeys("add salt");
+
+        WebElement cookField = driver.findElement(By.name("cookingTime"));
+        cookField.sendKeys("5 mins");
+
+        WebElement difficultField = driver.findElement(By.name("difficultyLevel"));
+        difficultField.sendKeys("super easy");
+
+        // Find signun button and click
+        WebElement saveButton = driver.findElement(By.className("submit-button") );
+        saveButton.click();
+
+        driver.close();
+    }
+}

@@ -1,0 +1,25 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org. openqa.selenium.WebElement;
+import org.openqa.selenium.safari.SafariDriver;
+
+public class SelTest1 {
+    public static void main (String[] args) {
+        
+        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
+
+        // Initialize Safari driver
+        WebDriver driver = new SafariDriver();
+
+        // Maximize the window
+        driver.manage().window().maximize();
+
+        // Open the URL
+        driver.get("http://localhost:3000/recipes");
+
+        // Find signup button and click
+        WebElement loadButton = driver.findElement(By.className("load-recipe" ));
+        loadButton.click();
+        driver.close();
+    }
+}

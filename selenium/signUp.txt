@@ -1,0 +1,38 @@
+package Package1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.safari.SafariDriver;
+
+public class SelTest {
+    public static void main (String[] args) {
+        // Set the system property for Safari driver
+        System.setProperty ("webdriver.safari.driver", "/usr/bin/safaridriver");
+
+        // Initialize Safari driver
+        WebDriver driver = new SafariDriver();
+
+        // Maximize the window
+        driver.manage().window().maximize();
+
+        // Open the URL
+        driver.get("http://localhost:3000/signup");
+
+        // Find username input field and send data
+        WebElement usernameField = driver.findElement(By.name("username"));
+        usernameField.sendKeys("kanishkaSingh");
+
+        // Find email input field and send data
+        WebElement emailField = driver.findElement(By name("email"));
+        emailField.sendKeys("kanishkaasinghh@gmail.com");
+
+        // Find password input field and send data
+        WebElement passwordField = driver.findElement(By name ("password"));
+        passwordField. sendKeys ("123");
+        
+        // Find signup button and click
+        WebElement signupButton = driver.findElement(By.cssSelector(".submit-btn.btnn"));
+        signupButton.click();
+    }
+}
